@@ -1,8 +1,10 @@
 package me.jwaxy.mobchains;
 
 import me.jwaxy.mobchains.item.ModItems;
+import me.jwaxy.mobchains.item.impl.MobChainItem;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.minecraft.resources.Identifier;
 
 import org.slf4j.Logger;
@@ -23,6 +25,7 @@ public class MobChains implements ModInitializer {
 		// Proceed with mild caution.
 
 		ModItems.registerModItems();
+		UseEntityCallback.EVENT.register(MobChainItem::handleUseAny);
 		LOGGER.info("Hello Fabric world!");
 	}
 

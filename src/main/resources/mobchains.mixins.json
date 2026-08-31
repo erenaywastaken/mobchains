@@ -1,14 +1,16 @@
 {
-	"required": true,
-	"package": "me.jwaxy.mobchains.mixin",
-	"compatibilityLevel": "JAVA_25",
-	"mixins": [
-		"ExampleMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"overwrites": {
-		"requireAnnotations": true
+  "required": true,
+  "package": "me.jwaxy.mobchains.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "ExampleMixin",
+    "LeashableMixin",
+    "LeashDataMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
 	}
 }
