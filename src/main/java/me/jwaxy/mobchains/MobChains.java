@@ -4,6 +4,7 @@ import me.jwaxy.mobchains.item.ModItems;
 import me.jwaxy.mobchains.item.impl.MobChainItem;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.minecraft.resources.Identifier;
 

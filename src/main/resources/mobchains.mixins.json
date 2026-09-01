@@ -3,9 +3,7 @@
   "package": "me.jwaxy.mobchains.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
-    "ExampleMixin",
-    "LeashableMixin",
-    "LeashDataMixin"
+    "ExampleMixin"
   ],
   "injectors": {
     "defaultRequire": 1
