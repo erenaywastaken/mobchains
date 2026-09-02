@@ -3,15 +3,15 @@
 	"id": "mobchains",
 	"version": "${version}",
 	"name": "Mob Chains",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Adds a new item, the \"Mob Chain\". This new item allows you to attach a sturdy leash made of chain to every mob including hostile mobs.",
 	"authors": [
-		"Me!"
+		"jwaxy"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/erenaywastaken/mobchains",
+		"sources": "https://github.com/erenaywastaken/mobchains"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/mobchains/icon.png",
 	"environment": "*",
 	"entrypoints": {

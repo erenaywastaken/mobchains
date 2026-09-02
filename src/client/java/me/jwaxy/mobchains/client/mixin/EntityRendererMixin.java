@@ -3,7 +3,7 @@ package me.jwaxy.mobchains.client.mixin;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.mojang.blaze3d.vertex.PoseStack;
-import me.jwaxy.mobchains.attachment.ModAttachments;
+import me.jwaxy.mobchains.chain.ChainHelper;
 import me.jwaxy.mobchains.client.renderer.ChainRenderState;
 import me.jwaxy.mobchains.client.renderer.ChainRenderer;
 import net.minecraft.client.renderer.SubmitNodeCollector;
@@ -32,7 +32,7 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
 
     @Inject(method = "extractRenderState", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/entity/EntityRenderer;extractNameTags(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/client/renderer/entity/state/EntityRenderState;F)V"))
     private void onExtractRenderState(T entity, S state, float partialTicks, CallbackInfo ci) {
-        Entity chainHolder = ModAttachments.getChainHolder(entity);
+        Entity chainHolder = ChainHelper.getChainHolder(entity);
         if (chainHolder != null) {
             ChainRenderState chainState = state.getData(ChainRenderState.STATE_DATA_KEY);
             if (chainState == null) chainState = new ChainRenderState();
@@ -60,7 +60,7 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Leashable;getLeashHolder()Lnet/minecraft/world/entity/Entity;")
     )
     private Entity getChainHolder(Leashable leashable, Operation<Entity> original) {
-        Entity chainHolder = ModAttachments.getChainHolder((Entity) leashable);
+        Entity chainHolder = ChainHelper.getChainHolder((Entity) leashable);
         if (chainHolder != null) {
             return chainHolder;
         }

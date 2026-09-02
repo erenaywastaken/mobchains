@@ -1,14 +1,13 @@
 package me.jwaxy.mobchains.item.impl;
 
 import me.jwaxy.mobchains.attachment.ModAttachments;
+import me.jwaxy.mobchains.chain.ChainHelper;
 import me.jwaxy.mobchains.item.ModItems;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Leashable;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -23,12 +22,9 @@ public class MobChainItem extends Item {
 
     public static InteractionResult handleUseAny(Player player, Level level, InteractionHand hand, Entity entity, EntityHitResult hitResult) {
         if (entity.isAlive() && entity instanceof Leashable) {
-            Entity chainHolder = ModAttachments.getChainHolder(entity);
+            Entity chainHolder = ChainHelper.getChainHolder(entity);
             if (chainHolder != null && chainHolder == player) {
-                if (!level.isClientSide()) {
-                    entity.spawnAtLocation((ServerLevel) level, ModItems.MOB_CHAIN);
-                }
-                entity.removeAttached(ModAttachments.CHAIN_ATTACHMENT);
+                ChainHelper.dropChain(entity);
                 entity.gameEvent(GameEvent.ENTITY_INTERACT, player);
                 entity.playSound(SoundEvents.LEAD_UNTIED);
 
