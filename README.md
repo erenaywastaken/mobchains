@@ -1,5 +1,7 @@
 # Mob Chains
 
+![Steve chaining a Zombie](assets/banner.jpg)
+
 A Minecraft mod that adds a new item, the "Mob Chain".
 
 This new item allows you to attach a sturdy leash made of chain to every mob including hostile mobs.
