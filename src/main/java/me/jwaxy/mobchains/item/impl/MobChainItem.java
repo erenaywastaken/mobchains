@@ -2,6 +2,7 @@ package me.jwaxy.mobchains.item.impl;
 
 import me.jwaxy.mobchains.attachment.ModAttachments;
 import me.jwaxy.mobchains.item.ModItems;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -24,8 +25,9 @@ public class MobChainItem extends Item {
         if (entity.isAlive() && entity instanceof Leashable) {
             Entity chainHolder = ModAttachments.getChainHolder(entity);
             if (chainHolder != null && chainHolder == player) {
-                ItemEntity droppedItem = new ItemEntity(level, entity.getX(), entity.getY(), entity.getZ(), new ItemStack(ModItems.MOB_CHAIN));
-                level.addFreshEntity(droppedItem);
+                if (!level.isClientSide()) {
+                    entity.spawnAtLocation((ServerLevel) level, ModItems.MOB_CHAIN);
+                }
                 entity.removeAttached(ModAttachments.CHAIN_ATTACHMENT);
                 entity.gameEvent(GameEvent.ENTITY_INTERACT, player);
                 entity.playSound(SoundEvents.LEAD_UNTIED);

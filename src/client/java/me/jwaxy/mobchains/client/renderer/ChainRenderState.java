@@ -13,7 +13,6 @@ public class ChainRenderState {
     public int endBlockLight;
     public int startSkyLight;
     public int endSkyLight;
-    public boolean slack;
 
     public ChainRenderState() {
         this.offset = Vec3.ZERO;
@@ -23,6 +22,5 @@ public class ChainRenderState {
         this.endBlockLight = 0;
         this.startSkyLight = 15;
         this.endSkyLight = 15;
-        this.slack = true;
     }
 }

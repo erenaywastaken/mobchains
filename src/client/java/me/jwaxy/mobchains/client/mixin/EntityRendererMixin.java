@@ -37,12 +37,15 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
             ChainRenderState chainState = state.getData(ChainRenderState.STATE_DATA_KEY);
             if (chainState == null) chainState = new ChainRenderState();
 
-            Vec3 leashOffset = Vec3.ZERO;
+            Vec3 leashOffset;
             if (entity instanceof Leashable leashable) {
                 leashOffset = leashable.getLeashOffset(partialTicks);
-                float entityYRot = entity.getPreciseBodyRotation(partialTicks) * (float) (Math.PI / 180.0);
-                leashOffset = leashOffset.yRot(-entityYRot);
+            } else {
+                leashOffset = new Vec3(0.0, entity.getEyeHeight(), entity.getBbWidth() * 0.4);
             }
+
+            float entityYRot = entity.getPreciseBodyRotation(partialTicks) * (float) (Math.PI / 180.0);
+            leashOffset = leashOffset.yRot(-entityYRot);
 
             chainState.offset = leashOffset;
             chainState.start = entity.getPosition(partialTicks).add(leashOffset);
