@@ -27,7 +27,7 @@ public class MobChains implements ModInitializer {
 
 		ModItems.registerModItems();
 		UseEntityCallback.EVENT.register(MobChainItem::handleUseAny);
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Mob Chains loaded!");
 	}
 
 	public static Identifier id(String path) {
