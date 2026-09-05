@@ -11,7 +11,15 @@ The Mob Chain can be very useful in several situations:
 - Transporting guardians to exploit their mining fatigue effect
 - A strong (doesn't snap) alternative to the Lead in general
 
-## Installation & Usage
+## Usage
+To get started with the mod you just need to craft the Mob Chain item.  
+The recipe is the same as The Lead except it uses iron chains instead of string.
+![Crafting recipe](assets/recipe.png)
+After obtaining the item you just have to use it (right-click) on whichever mob you want to chain.
+
+#### Go crazy with it! There is no limit with chaining ;D
+
+## Installation
 The mod can be downloaded from [Curseforge](https://www.curseforge.com/minecraft/mc-mods/mob-chains) or [Modrinth](https://modrinth.com/mod/mob-chains) (under review at the time of writing this).
 You need to have these installed to use the mod:
 - [Minecraft 26.2](https://www.minecraft.net/en-us/store/minecraft-deluxe-collection-pc)
