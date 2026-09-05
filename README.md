@@ -15,6 +15,7 @@ The Mob Chain can be very useful in several situations:
 To get started with the mod you just need to craft the Mob Chain item.  
 The recipe is the same as The Lead except it uses iron chains instead of string.
 ![Crafting recipe](assets/recipe.png)
+
 After obtaining the item you just have to use it (right-click) on whichever mob you want to chain.
 
 #### Go crazy with it! There is no limit with chaining ;D
