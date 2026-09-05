@@ -19,6 +19,9 @@ After obtaining the item you just have to use it (right-click) on whichever mob 
 
 #### Go crazy with it! There is no limit with chaining ;D
 
+# Demo Video
+https://github.com/user-attachments/assets/5cd6ef42-3929-43c7-8fc8-5e8c06d25bbc
+
 ## Installation
 The mod can be downloaded from [Curseforge](https://www.curseforge.com/minecraft/mc-mods/mob-chains) or [Modrinth](https://modrinth.com/mod/mob-chains) (under review at the time of writing this).
 You need to have these installed to use the mod:
